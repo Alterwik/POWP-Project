@@ -10,8 +10,9 @@ import javafx.stage.Stage;
 //        abstract factory - zrobione
 //        observer
 //        decorator
-//        builder
-//        publish subscriber subskrypcja na dostraczenie produktu
+//        builder - zrobione
+//        publish subscriber (subskrypcja na dostraczenie produktu)
+//        wizualizacja procesu produkcji samochodu z drzewkiem wyboru opcji, pakietów i dekoratorów
 
 public class Main extends Application {
 
@@ -22,7 +23,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

@@ -19,4 +19,15 @@ public class Truck extends Car {
     public void drive() {
         System.out.println("kleklekelkelkelkekelekkeeklklekekeelkelekellekelekekelke");
     }
+
+    public static class Builder extends Car.CarBuilder {
+
+        @Override
+        public Car build() {
+            Car car = new Truck(carProductionRegion);
+            ((Truck) car).carInteriorColor = this.CarInteriorColor;
+            ((Truck) car).carBodyColor = this.CarBodyColor;
+            return car;
+        }
+    }
 }

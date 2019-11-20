@@ -1,8 +1,9 @@
-package factory;
+package tests;
 
 import car.utilities.Car;
 import car.utilities.CarProductionRegion;
 import car.utilities.CarType;
+import factory.CarFactory;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 
