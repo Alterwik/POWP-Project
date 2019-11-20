@@ -1,8 +1,5 @@
 package sample;
 
-import car.CarType;
-import factory.AbstractFactory;
-import factory.FactoryProvider;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 //TODO
-//        abstract factory ( fabryka tworząca fabrykę samochodów sportowych, dostawczych, miejskich i rodzinnych )
+//        abstract factory - zrobione
 //        observer
 //        decorator
 //        builder
@@ -29,8 +26,6 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-        FactoryProvider factoryProvider = new FactoryProvider();
-        AbstractFactory sportsCarFactory = factoryProvider.getFactory("sportscar");
-        sportsCarFactory.create(CarType.SPORTS_CAR);
+
     }
 }
