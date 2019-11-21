@@ -1,10 +1,13 @@
 package car.utilities;
 
+import java.util.ArrayList;
+
 public abstract class Car implements Driveable {
     protected CarType carType;
     protected CarProductionRegion carProductionRegion;
     protected String carBodyColor;
     protected String carInteriorColor;
+    protected ArrayList<String> carDecoration;
 
     protected Car(CarType carType, CarProductionRegion carProductionRegion) {
         this.carProductionRegion = carProductionRegion;
