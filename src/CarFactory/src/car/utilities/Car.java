@@ -7,7 +7,7 @@ public abstract class Car implements Driveable {
     protected CarProductionRegion carProductionRegion;
     protected String carBodyColor;
     protected String carInteriorColor;
-    protected ArrayList<String> carDecoration;
+    protected ArrayList<String> carDecoration = new ArrayList<>();
 
     protected Car(CarType carType, CarProductionRegion carProductionRegion) {
         this.carProductionRegion = carProductionRegion;
@@ -30,6 +30,14 @@ public abstract class Car implements Driveable {
 
     public String getCarInteriorColor() {
         return carInteriorColor;
+    }
+
+    public void addCarDecoration(String decoration){
+        carDecoration.add(decoration);
+    }
+
+    public void getCarDecorations(){
+        System.out.println(carDecoration);
     }
 
     public String toString() {
