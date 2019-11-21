@@ -8,7 +8,8 @@ public class ParkingSensors extends CarDecorator {
     }
 
     @Override
-    public void decorateCar(Car carToDecorate) {
-        carToDecorate.addCarDecoration("PARKING SENSORS");
+    public void decorateCar() {
+        super.decorateCar();
+        System.out.print(" PARKING SENSORS");
     }
 }

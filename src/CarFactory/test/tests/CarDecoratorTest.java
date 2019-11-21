@@ -4,12 +4,13 @@ package tests;
 import car.utilities.Car;
 import car.utilities.CarProductionRegion;
 import car.utilities.CarType;
-import decorator.CarDecoratorInterface;
-import decorator.DigitalClocks;
-import decorator.HeatedSeats;
-import decorator.ParkingSensors;
+import decorator.*;
 import factory.CarFactory;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 public class CarDecoratorTest {
 
@@ -18,8 +19,12 @@ public class CarDecoratorTest {
         CarFactory carFactory = new CarFactory();
         carFactory.setCarProductionRegion(CarProductionRegion.USA);
         Car car = carFactory.create(CarType.CITY_CAR);
-        CarDecoratorInterface carDecorations = new ParkingSensors(new HeatedSeats());
-        carDecorations.decorateCar(car);
-        car.getCarDecorations();
+        CarDecoratorInterface carDecorations = new DigitalClocks(new HeatedSeats(new DecoratedCar(car)));
+
+        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+
+        System.setOut(new PrintStream(outContent));
+        carDecorations.decorateCar();
+        Assertions.assertEquals(car.toString() + " HEATED SEATS DIGITAL CLOCKS", outContent.toString());
     }
 }

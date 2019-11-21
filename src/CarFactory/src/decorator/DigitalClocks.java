@@ -1,7 +1,5 @@
 package decorator;
 
-import car.utilities.Car;
-
 public class DigitalClocks extends CarDecorator {
 
     public DigitalClocks(CarDecoratorInterface inner){
@@ -9,7 +7,8 @@ public class DigitalClocks extends CarDecorator {
     }
 
     @Override
-    public void decorateCar(Car carToDecorate) {
-        carToDecorate.addCarDecoration("DIGITAL CLOCKS");
+    public void decorateCar() {
+        super.decorateCar();
+        System.out.print(" DIGITAL CLOCKS");
     }
 }

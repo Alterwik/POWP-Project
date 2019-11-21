@@ -8,7 +8,8 @@ public class Tablets extends CarDecorator {
     }
 
     @Override
-    public void decorateCar(Car carToDecorate) {
-        carToDecorate.addCarDecoration("TABLETS");
+    public void decorateCar() {
+        super.decorateCar();
+        System.out.print(" TABLETS");
     }
 }
