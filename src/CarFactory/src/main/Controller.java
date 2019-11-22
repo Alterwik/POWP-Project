@@ -1,4 +1,4 @@
-package sample;
+package main;
 
 import car.utilities.Car;
 import car.utilities.CarProductionRegion;

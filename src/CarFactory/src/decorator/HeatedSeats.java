@@ -1,6 +1,6 @@
 package decorator;
 
-import car.utilities.Car;
+import decorator.utilities.CarDecoratorInterface;
 
 public class HeatedSeats extends CarDecorator {
     public HeatedSeats(CarDecoratorInterface inner) {

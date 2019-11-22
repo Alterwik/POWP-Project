@@ -1,6 +1,6 @@
 package decorator;
 
-import car.utilities.Car;
+import decorator.utilities.CarDecoratorInterface;
 
 public class ParkingSensors extends CarDecorator {
     public ParkingSensors(CarDecoratorInterface inner) {

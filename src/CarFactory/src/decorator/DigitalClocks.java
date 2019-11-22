@@ -1,5 +1,7 @@
 package decorator;
 
+import decorator.utilities.CarDecoratorInterface;
+
 public class DigitalClocks extends CarDecorator {
 
     public DigitalClocks(CarDecoratorInterface inner){

@@ -1,6 +1,6 @@
 package decorator;
 
-import car.utilities.Car;
+import decorator.utilities.CarDecoratorInterface;
 
 public class Tablets extends CarDecorator {
     public Tablets(CarDecoratorInterface inner){
