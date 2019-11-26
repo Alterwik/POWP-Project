@@ -11,7 +11,7 @@ import pubsub.*;
 
 public class Controller {
     @FXML
-    Label test1;
+    Label label1;
     public void buildCar(ActionEvent actionEvent) {
         PubSubService pubSubService = new PubSubService();
         Publisher dealer = new PublisherImpl();
@@ -30,6 +30,7 @@ public class Controller {
         carFactory.setCarProductionRegion(CarProductionRegion.USA);
         Car car = carFactory.create(CarType.CITY_CAR);
 
-        test1.setText("Hello!");
+
+        label1.setText("Production started!!");
     }
 }

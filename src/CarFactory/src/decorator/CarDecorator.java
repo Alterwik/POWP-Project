@@ -20,9 +20,14 @@ abstract class CarDecorator extends Car {
 
     @Override
     public String toString(){
-        return car.toString() + " with " + decorations.toString()
+        String output = car.toString();
+        String addition = " with " + decorations.toString()
                 .replace("[", "")
                 .replace("]", "");
+        if(!output.contains(addition)){
+            output += addition;
+        }
+        return output;
     }
 
 }
