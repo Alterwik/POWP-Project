@@ -1,15 +1,21 @@
 package decorator;
 
-import decorator.utilities.CarDecoratorInterface;
+import car.utilities.Car;
 
 public class Tablets extends CarDecorator {
-    public Tablets(CarDecoratorInterface inner){
-        super(inner);
+
+    public Tablets(Car car) {
+        super(car);
+        decore("TABLETS");
     }
 
     @Override
-    public void decorateCar() {
-        super.decorateCar();
-        System.out.print(" TABLETS");
+    public void runTheEngine() {
+        car.runTheEngine();
+    }
+
+    @Override
+    public void drive() {
+        car.drive();
     }
 }

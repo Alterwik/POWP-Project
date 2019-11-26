@@ -3,10 +3,6 @@ package tests;
 import car.utilities.Car;
 import car.utilities.CarProductionRegion;
 import car.utilities.CarType;
-import decorator.utilities.CarDecoratorInterface;
-import decorator.utilities.DecoratedCar;
-import decorator.DigitalClocks;
-import decorator.HeatedSeats;
 import factory.CarFactory;
 import org.junit.Test;
 import pubsub.*;
@@ -31,8 +27,8 @@ public class CarPublisherTest {
         CarFactory carFactory = new CarFactory();
         carFactory.setCarProductionRegion(CarProductionRegion.USA);
         Car car = carFactory.create(CarType.CITY_CAR);
-        CarDecoratorInterface carDecorations = new DigitalClocks(new HeatedSeats(new DecoratedCar(car)));
-        carDecorations.decorateCar();
+//        CarDecoratorInterface carDecorations = new DigitalClocks(new HeatedSeats(new DecoratedCar(car)));
+//        carDecorations.decorateCar();
         System.out.println();
 
         Message thirdStage = new Message("KACPR", "Production ended");

@@ -1,15 +1,21 @@
 package decorator;
 
-import decorator.utilities.CarDecoratorInterface;
+import car.utilities.Car;
 
 public class HeatedSeats extends CarDecorator {
-    public HeatedSeats(CarDecoratorInterface inner) {
-        super(inner);
+
+    public HeatedSeats(Car car) {
+        super(car);
+        decore("HEATED_SEATS");
     }
 
     @Override
-    public void decorateCar() {
-        super.decorateCar();
-        System.out.print(" HEATED SEATS");
+    public void runTheEngine() {
+        car.runTheEngine();
+    }
+
+    @Override
+    public void drive() {
+        car.drive();
     }
 }

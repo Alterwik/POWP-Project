@@ -1,50 +1,72 @@
 package tests;
 
 
+import car.CityCar;
+import car.ClassicCar;
+import car.SportsCar;
+import car.Truck;
 import car.utilities.Car;
 import car.utilities.CarProductionRegion;
-import car.utilities.CarType;
-import decorator.*;
-import decorator.utilities.CarDecoratorInterface;
-import decorator.utilities.DecoratedCar;
-import factory.CarFactory;
+import decorator.DigitalClocks;
+import decorator.HeatedSeats;
+import decorator.ParkingSensors;
+import decorator.Tablets;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 public class CarDecoratorTest {
 
     @Test
     public void shouldDecorateWithSeatsAndClocks() {
-        CarFactory carFactory = new CarFactory();
-        carFactory.setCarProductionRegion(CarProductionRegion.USA);
-        Car car = carFactory.create(CarType.CITY_CAR);
-        CarDecoratorInterface carDecorations = new DigitalClocks(new HeatedSeats(new DecoratedCar(car)));
-
-        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-
-        System.setOut(new PrintStream(outContent));
-        carDecorations.decorateCar();
-        Assertions.assertEquals(car.toString() + " HEATED SEATS DIGITAL CLOCKS", outContent.toString());
+        Car car = new SportsCar(CarProductionRegion.EUROPE);
+        car = new DigitalClocks(car);
+        car = new HeatedSeats(car);
+        String expectedString = "SPORTS_CAR build in EUROPE with DIGITAL_CLOCKS with HEATED_SEATS";
+        Assertions.assertEquals(expectedString, car.toString());
     }
 
     @Test
-    public void shoulddo() {
-        CarFactory carFactory = new CarFactory();
-        carFactory.setCarProductionRegion(CarProductionRegion.JAPAN);
-        Car car = carFactory.create(CarType.SPORTS_CAR);
-        System.out.println(car);// regular car
-        //CarDecoratorInterface carDecorations = new HeatedSeats(new DecoratedCar(car));//TODO decorateCar() should return DecoratedCar
-        //carDecorations.decorateCar();
-        /*TODO commented part should work
-        DecoratedCar dc = new HeatedSeats(new DecoratedCar(car));
-        */
-        System.out.println("----");
-        System.out.println(car);//TODO this car should be decorated
+    public void shouldDecorateWithDigitalClocks() {
+        Car car = new Truck(CarProductionRegion.JAPAN);
+        car = new DigitalClocks(car);
+        String expectedString = "TRUCK build in JAPAN with DIGITAL_CLOCKS";
+        Assertions.assertEquals(expectedString, car.toString());
+    }
 
+    @Test
+    public void shouldDecorateWithHeatedSeats() {
+        Car car = new ClassicCar(CarProductionRegion.USA);
+        car = new HeatedSeats(car);
+        String expectedString = "CLASSIC_CAR build in USA with HEATED_SEATS";
+        Assertions.assertEquals(expectedString, car.toString());
+    }
 
-//
+    @Test
+    public void shouldDecorateWithParkingSensors() {
+        Car car = new CityCar(CarProductionRegion.GARAGE);
+        car = new ParkingSensors(car);
+        String expectedString = "CITY_CAR build in GARAGE with PARKING_SENSORS";
+        Assertions.assertEquals(expectedString, car.toString());
+    }
+
+    @Test
+    public void shouldDecorateWithTablets() {
+        Car car = new SportsCar(CarProductionRegion.EUROPE);
+        car = new Tablets(car);
+        String expectedString = "SPORTS_CAR build in EUROPE with TABLETS";
+        Assertions.assertEquals(expectedString, car.toString());
+    }
+
+    @Test
+    public void shouldDecorateWithSeatsClocksSensorsAndTablets() {
+        Car car = new SportsCar(CarProductionRegion.JAPAN);
+        car = new DigitalClocks(car);
+        car = new HeatedSeats(car);
+        car = new ParkingSensors(car);
+        car = new Tablets(car);
+        String expectedString = "SPORTS_CAR build in JAPAN" +
+                " with DIGITAL_CLOCKS with HEATED_SEATS" +
+                " with PARKING_SENSORS with TABLETS";
+        Assertions.assertEquals(expectedString, car.toString());
     }
 }

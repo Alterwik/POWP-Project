@@ -15,7 +15,7 @@ public class CarFactoryTest {
         Car car = carFactory.create(expectedCt);
         Assertions.assertSame(expectedCt, car.getCarType());
         Assertions.assertSame(expectedCpr, car.getCarProductionRegion());
-        Assertions.assertEquals(expectedCt + " built in " + expectedCpr, car.toString());
+        Assertions.assertEquals(expectedCt + " build in " + expectedCpr, car.toString());
     }
 
     @Test

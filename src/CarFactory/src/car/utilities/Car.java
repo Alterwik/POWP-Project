@@ -30,7 +30,7 @@ public abstract class Car implements Driveable {
     }
 
     public String toString() {
-        return carType + " built in " + carProductionRegion;
+        return carType + " build in " + carProductionRegion;
     }
 
     public abstract static class CarBuilder {

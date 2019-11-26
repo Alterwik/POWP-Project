@@ -1,16 +1,21 @@
 package decorator;
 
-import decorator.utilities.CarDecoratorInterface;
+import car.utilities.Car;
 
 public class DigitalClocks extends CarDecorator {
 
-    public DigitalClocks(CarDecoratorInterface inner){
-        super(inner);
+    public DigitalClocks(Car car) {
+        super(car);
+        decore("DIGITAL_CLOCKS");
     }
 
     @Override
-    public void decorateCar() {
-        super.decorateCar();
-        System.out.print(" DIGITAL CLOCKS");
+    public void runTheEngine() {
+        car.runTheEngine();
+    }
+
+    @Override
+    public void drive() {
+        car.drive();
     }
 }

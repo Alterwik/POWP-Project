@@ -1,15 +1,21 @@
 package decorator;
 
-import decorator.utilities.CarDecoratorInterface;
+import car.utilities.Car;
 
 public class ParkingSensors extends CarDecorator {
-    public ParkingSensors(CarDecoratorInterface inner) {
-        super(inner);
+
+    public ParkingSensors(Car car) {
+        super(car);
+        decore("PARKING_SENSORS");
     }
 
     @Override
-    public void decorateCar() {
-        super.decorateCar();
-        System.out.print(" PARKING SENSORS");
+    public void runTheEngine() {
+        car.runTheEngine();
+    }
+
+    @Override
+    public void drive() {
+        car.drive();
     }
 }
