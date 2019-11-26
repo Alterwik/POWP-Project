@@ -1,12 +1,13 @@
 package decorator;
 
 import car.utilities.Car;
+import decorator.utilities.CarDecoration;
 
 public class ParkingSensors extends CarDecorator {
 
     public ParkingSensors(Car car) {
         super(car);
-        decore("PARKING_SENSORS");
+        decorate(CarDecoration.PARKING_SENSORS);
     }
 
     @Override

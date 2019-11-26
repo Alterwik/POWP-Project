@@ -1,12 +1,13 @@
 package decorator;
 
 import car.utilities.Car;
+import decorator.utilities.CarDecoration;
 
 public class HeatedSeats extends CarDecorator {
 
     public HeatedSeats(Car car) {
         super(car);
-        decore("HEATED_SEATS");
+        decorate(CarDecoration.HEATED_SEATS);
     }
 
     @Override

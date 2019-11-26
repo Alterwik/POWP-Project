@@ -69,4 +69,24 @@ public class CarDecoratorTest {
                 " with PARKING_SENSORS with TABLETS";
         Assertions.assertEquals(expectedString, car.toString());
     }
+//TODO czy poniższe testy są potrzebne?
+//
+//    @Test
+//    public void shouldDecorateWithTabletsOnlyOnce() {
+//        Car car = new SportsCar(CarProductionRegion.EUROPE);
+//        car = new Tablets(car);
+//        car = new Tablets(car);
+//        String expectedString = "SPORTS_CAR build in EUROPE with TABLETS";
+//        Assertions.assertEquals(expectedString, car.toString());
+//    }
+//
+//    @Test
+//    public void shouldDecorateWithSeatsAndClocksOnlyOnce() {
+//        Car car = new SportsCar(CarProductionRegion.EUROPE);
+//        car = new DigitalClocks(car);
+//        car = new HeatedSeats(car);
+//        car = new DigitalClocks(car);
+//        String expectedString = "SPORTS_CAR build in EUROPE with DIGITAL_CLOCKS with HEATED_SEATS";
+//        Assertions.assertEquals(expectedString, car.toString());
+//    }
 }

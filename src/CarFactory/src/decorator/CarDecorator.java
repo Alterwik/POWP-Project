@@ -1,20 +1,20 @@
 package decorator;
 
 import car.utilities.Car;
+import decorator.utilities.CarDecoration;
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.EnumSet;
 
 abstract class CarDecorator extends Car {
     protected Car car;
-    protected Set<String> decorations = new TreeSet<>();
+    protected EnumSet<CarDecoration> decorations = EnumSet.noneOf(CarDecoration.class);
 
     protected CarDecorator(Car car) {
         super(car.getCarType(), car.getCarProductionRegion());
         this.car = car;
     }
 
-    protected void decore(String decoration) {
+    protected void decorate(CarDecoration decoration) {
         decorations.add(decoration);
     }
 

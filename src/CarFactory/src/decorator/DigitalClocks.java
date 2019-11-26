@@ -1,12 +1,13 @@
 package decorator;
 
 import car.utilities.Car;
+import decorator.utilities.CarDecoration;
 
 public class DigitalClocks extends CarDecorator {
 
     public DigitalClocks(Car car) {
         super(car);
-        decore("DIGITAL_CLOCKS");
+        decorate(CarDecoration.DIGITAL_CLOCKS);
     }
 
     @Override
