@@ -6,6 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+//import javafx.scene.control.Button;
+//import javafx.scene.control.Label;
+//import javafx.scene.layout.StackPane;
+//import javafx.scene.layout.VBox;
+
+
+
 //TODO
 //        abstract factory - zrobione
 //        observer
@@ -22,10 +29,6 @@ public class Main extends Application {
         primaryStage.setTitle("Car Factory Main Interface");
         primaryStage.setScene(new Scene(root, 600, 500));
         primaryStage.show();
-
-//        ScreenController screenController = new ScreenController(primaryStage.getScene());
-//        screenController.addScreen("carType", FXMLLoader.load(getClass().getResource( "carType.fxml" )));
-//        screenController.activate("carType");
     }
 
     public static void main(String[] args) {
