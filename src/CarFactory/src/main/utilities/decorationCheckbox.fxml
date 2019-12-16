@@ -5,12 +5,12 @@
 <?import javafx.scene.layout.Pane?>
 
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:controller="main.Controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <CheckBox layoutX="128.0" layoutY="168.0" mnemonicParsing="false" text="DIGITAL CLOCKS" />
-      <CheckBox layoutX="128.0" layoutY="189.0" mnemonicParsing="false" text="HEATED SEATS" />
-      <CheckBox layoutX="128.0" layoutY="210.0" mnemonicParsing="false" text="PARKING SENSORS" />
-      <CheckBox layoutX="128.0" layoutY="231.0" mnemonicParsing="false" text="TABLETS" />
-      <Button layoutX="333.0" layoutY="169.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="77.0" text="SUBMIT" />
+      <CheckBox fx:id="dcCheckBox" onAction="#chooseCarDecoration" layoutX="128.0" layoutY="168.0" mnemonicParsing="false" text="DIGITAL CLOCKS" />
+      <CheckBox fx:id="hsCheckBox" onAction="#chooseCarDecoration" layoutX="128.0" layoutY="189.0" mnemonicParsing="false" text="HEATED SEATS" />
+      <CheckBox fx:id="psCheckBox" onAction="#chooseCarDecoration" layoutX="128.0" layoutY="210.0" mnemonicParsing="false" text="PARKING SENSORS" />
+      <CheckBox fx:id="tCheckBox" onAction="#chooseCarDecoration" layoutX="128.0" layoutY="231.0" mnemonicParsing="false" text="TABLETS" />
+      <Button fx:id="submitDecoration" onAction="#chooseCarDecoration" layoutX="333.0" layoutY="169.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="77.0" text="SUBMIT" />
    </children>
 </Pane>
