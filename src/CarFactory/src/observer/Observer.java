@@ -1,8 +1,6 @@
 package observer;
 
-import factory.CarFactory;
-
 abstract class Observer {
-    protected CarFactory carFactory;
+    protected Subject subject;
     public abstract void update();
 }

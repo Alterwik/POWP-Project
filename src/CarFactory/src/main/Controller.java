@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import observer.ProductionEndedObserver;
+import observer.Subject;
 import pubsub.*;
 import singleton.CarList;
 
@@ -27,15 +29,14 @@ public class Controller {
     @FXML
     CheckBox dcCheckBox, hsCheckBox, psCheckBox, tCheckBox;
 
+    private static PubSubService pubSubService = new PubSubService();
+    private static Publisher dealer = new PublisherImpl();
+    private static Publisher engineer = new PublisherImpl();
+    private static Subscriber client = new SubscriberImpl();
+
     public void buildCar(ActionEvent actionEvent) {
         Stage stage = (Stage) buildCarButton.getScene().getWindow();
         ScreenController.changeScene(stage, "utilities/factory.fxml");
-
-//-----------TODO Kacper ??
-        PubSubService pubSubService = new PubSubService();
-        Publisher dealer = new PublisherImpl();
-        Publisher engineer = new PublisherImpl();
-        Subscriber client = new SubscriberImpl();
 
         client.addSubscriber("KACPER", pubSubService);
 
@@ -48,7 +49,6 @@ public class Controller {
 //        CarFactory carFactory = new CarFactory();
 //        carFactory.setCarProductionRegion(CarProductionRegion.USA);
 //        Car car = carFactory.create(CarType.CITY_CAR);
-
     }
 
     public void chooseFactory(ActionEvent actionEvent) {
@@ -106,9 +106,16 @@ public class Controller {
                 CarList.getInstance().addDecorationToLastCar(new Tablets(CarList.getInstance().getLastCar()));
             }
         } else return;
+
+        Message thirdStage = new Message("KACPER", "Production Ended");
+        dealer.publish(thirdStage, pubSubService);
+
+        Subject sub = new Subject();
+        new ProductionEndedObserver(sub);
+        sub.setState(CarList.getInstance().getLastCar().toString());
+
         Stage stage = (Stage) dcCheckBox.getScene().getWindow();
         ScreenController.changeScene(stage, "utilities/welcome.fxml");
-//        System.out.println(CarList.getInstance().getLastCar().toString());
         System.out.println(CarList.getInstance().getCarList().toString());
     }
 }
