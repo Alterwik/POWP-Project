@@ -6,21 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-//import javafx.scene.control.Button;
-//import javafx.scene.control.Label;
-//import javafx.scene.layout.StackPane;
-//import javafx.scene.layout.VBox;
-
-
-
-//TODO
-//        abstract factory - zrobione
-//        observer
-//        decorator - zrobione
-//        builder - zrobione
-//        publish subscriber (subskrypcja na dostraczenie produktu)
-//        wizualizacja procesu produkcji samochodu z drzewkiem wyboru opcji, pakietów i dekoratorów
-
 public class Main extends Application {
 
     @Override

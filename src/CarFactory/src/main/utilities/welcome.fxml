@@ -6,7 +6,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.Controller">
    <children>
-      <Label fx:id="label1" layoutX="-1.0" layoutY="111.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="600.0" style="-fx-alignment: center;" text="Thanks for buying car! " textFill="#18336b">
+      <Label fx:id="label1" layoutX="-1.0" layoutY="111.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="600.0" style="-fx-alignment: center;" text="Customize your car! " textFill="#18336b">
          <font>
             <Font name="System Bold" size="24.0" />
          </font>

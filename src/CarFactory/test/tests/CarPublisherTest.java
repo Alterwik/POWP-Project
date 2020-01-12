@@ -27,8 +27,6 @@ public class CarPublisherTest {
         CarFactory carFactory = new CarFactory();
         carFactory.setCarProductionRegion(CarProductionRegion.USA);
         Car car = carFactory.create(CarType.CITY_CAR);
-//        CarDecoratorInterface carDecorations = new DigitalClocks(new HeatedSeats(new DecoratedCar(car)));
-//        carDecorations.decorateCar();
         System.out.println();
 
         Message thirdStage = new Message("KACPR", "Production ended");

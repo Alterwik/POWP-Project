@@ -24,9 +24,9 @@ public class CityCar extends Car {
 
         @Override
         public Car build() {
-            Car car = new CityCar(carProductionRegion);
-            ((CityCar) car).carInteriorColor = this.CarInteriorColor;
-            ((CityCar) car).carBodyColor = this.CarBodyColor;
+            CityCar car = new CityCar(carProductionRegion);
+            car.carInteriorColor = this.CarInteriorColor;
+            car.carBodyColor = this.CarBodyColor;
             return car;
         }
     }
